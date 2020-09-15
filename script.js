@@ -27,12 +27,48 @@ function writePassword() {
 
 // Prompts for password criteria
 function generatePassword() {
-  charLength = prompt('Choose a length of at least 8 characters and no more than 128 characters, type a number');
-  var charLength = 0
-  while (charLength >= 8 && charLength =< 129) {
-    console.log('Password length is: ' + charLength);
+
+  var charLength = prompt('Choose a length of at least 8 characters and no more than 128 characters. Type the number');
+
+  while (length > 8 || length < 128) {
+  
+    // Make sure guess is within rage
+    if(Number(charLength) === length) {
+      console.log('Character length is: ' + charLength + '<br>');
+    }
+
+    else if(Number(charLength) > 128) {
+      alert("Too high. Please pick a character length between 8 and 128 characters")
+      prompt('Choose a length of at least 8 characters and no more than 128 characters. Type the number');
+    }
+  
+    else if(Number(charLength) < 8) {
+      alert("Too low. Please pick a character length between 8 and 128 characters")
+      prompt('Choose a length of at least 8 characters and no more than 128 characters. Type the number');
+    }
+
+
   }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -53,4 +89,4 @@ var specialChar = confirm('Do you want to include numbers?');
 var specialChar = confirm('Do you want to include special characters?');
  
 
-  
+}

@@ -1,0 +1,17 @@
+var charLength > 8  
+
+var charLength = prompt('Choose a length of at least 8 characters and no more than 128 characters. Type the number');
+
+while (charLength > 8 || charLength < 128) {
+  console.log('Character length is: ' + charLength);
+}
+// Else if the user was born after 1997, alert "No Sake for you!"
+else if (charLength < 8) {
+  console.log('Invalid number' + charLength);
+}
+
+ var charLength = 0;
+ while (charLength = 8 || charLength > 128) {
+   charLength = prompt('Choose a length of at least 8 characters and no more than 128 characters. Pleae type.');
+   console.log('character length is: ' + charLength)
+ }
