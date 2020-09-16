@@ -33,6 +33,7 @@ function generatePassword() {
 
   // Ask the user to select between 8-128 characters
   var charLength = prompt("Choose a length of at least 8 characters and no more than 128 characters. Type your number");
+  var passwordLength = parseInt(charLength, 10); // Now charLength is a number!
 
     // Validate the user input
     if(charLength >= 8 && charLength <= 128) {
@@ -47,17 +48,18 @@ function generatePassword() {
           var charLower = confirm('Do you want lowercase characters? Ok (yes) Cancel (no)');
 
           // Ask if the user would like numbers
-          var charNumbers = confirm('Do you want to include numbers? Ok (yes) Cancel (no)');
+          var charNumbers = confirm('Do you want numbers? Ok (yes) Cancel (no)');
 
           // Ask if the user wants special characters
-          var charSpecial = confirm('Do you want to include special characters? Ok (yes) Cancel (no)'); 
+          var charSpecial = confirm('Do you want special characters? Ok (yes) Cancel (no)'); 
               
             if(charUpper === true || charLower === true  || charNumbers === true  || charSpecial === true) {
 
               // Randomly selects a choice from the uppercase array
               if (charUpper == true) {
+                
 
-                for (let i = 0; i < charLength; i++) { 
+                for (let i = 0; i < passwordLength; i++) {  // OR CHARLENGTH!!!!*****
                   var upper = upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)];
                   console.log(upper);         
                 }    
@@ -66,7 +68,7 @@ function generatePassword() {
               // Randomly selects a choice from the lowercase array
               if (charLower == true) {
 
-                for (let i = 0; i < charLength; i++) { 
+                for (let i = 0; i < passwordLength; i++) { 
                 var lower = lowerCaseCharacters[Math.floor(Math.random() * lowerCaseCharacters.length)]; 
                 console.log(lower);
                 }
@@ -75,7 +77,7 @@ function generatePassword() {
              // Randomly selects a choice from the numbers array
              if (charNumbers == true) {
               
-              for (let i = 0; i < charLength; i++) { 
+              for (let i = 0; i < passwordLength; i++) { 
               var num = numericCharacters[Math.floor(Math.random() * numericCharacters.length)]; 
               console.log(num);
               }
@@ -84,11 +86,12 @@ function generatePassword() {
               // Randomly selects a choice from the special characters array
               if (charSpecial == true) {
 
-                for (let i = 0; i < charLength; i++) { 
+                for (let i = 0; i < passwordLength; i++) { 
                 var spec = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]; 
                 console.log(spec);
                 }
               }
+            
             
               
             // Error message if selected cancel for all of the confirms
