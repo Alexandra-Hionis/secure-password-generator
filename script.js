@@ -59,7 +59,7 @@ function generatePassword() {
               if (charUpper == true) {
                 
 
-                for (let i = 0; i < passwordLength; i++) {  // OR CHARLENGTH!!!!*****
+                for (let i = 0; i < charLength; i++) {  // OR CHARLENGTH!!!!*****
                   var upper = upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)];
                   console.log(upper);         
                 }    
@@ -68,7 +68,7 @@ function generatePassword() {
               // Randomly selects a choice from the lowercase array
               if (charLower == true) {
 
-                for (let i = 0; i < passwordLength; i++) { 
+                for (let i = 0; i < charLength; i++) { 
                 var lower = lowerCaseCharacters[Math.floor(Math.random() * lowerCaseCharacters.length)]; 
                 console.log(lower);
                 }
@@ -77,7 +77,7 @@ function generatePassword() {
              // Randomly selects a choice from the numbers array
              if (charNumbers == true) {
               
-              for (let i = 0; i < passwordLength; i++) { 
+              for (let i = 0; i < charLength; i++) { 
               var num = numericCharacters[Math.floor(Math.random() * numericCharacters.length)]; 
               console.log(num);
               }
@@ -86,21 +86,17 @@ function generatePassword() {
               // Randomly selects a choice from the special characters array
               if (charSpecial == true) {
 
-                for (let i = 0; i < passwordLength; i++) { 
+                for (let i = 0; i < charLength; i++) { 
                 var spec = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]; 
                 console.log(spec);
                 }
               }
-            
-            
               
             // Error message if selected cancel for all of the confirms
               } else {
                 alert('Please select one of the password criteria');
               }
-            
-
-              
+                     
 
    // Error message the input was outside of our range
   } else {
@@ -108,14 +104,42 @@ function generatePassword() {
   prompt("Choose a length of at least 8 characters and no more than 128 characters. Type your number");
   } 
 
+  // Add one of each type of character to the password
+var password = "";
+var characterPool = [];
 
+if (charUpper) {
+  password += //get a random capital letter.
+  characterPool.concat(upperCaseCharacters);
+ }
+
+ if (charLower) {
+  password += //get a random capital letter.
+  characterPool.concat(lowerCaseCharacters);
+ }
+
+ if (charNumbers) {
+  password += //get a random capital letter.
+  characterPool.concat(numericCharacters);
+ }
+
+ if (charSpecial) {
+  password += //get a random capital letter.
+  characterPool.concat(specialCharacters);
+ }
+
+
+
+while (characterPool < charLength) {
+  characterPool++;
+  console.log('Password is: ');
 }
 
 
+return password;
+}  
 
-    
-
-  
+ 
     
 
 
