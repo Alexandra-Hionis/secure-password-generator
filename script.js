@@ -16,6 +16,8 @@ const lowerCaseCharacters = ['a','b','c','d','e','f','g','h','i','j','l','m','n'
 // Array of uppercase characters to be included in password
 const upperCaseCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -25,30 +27,87 @@ function writePassword() {
 
 }
 
-// Prompts for password criteria
 function generatePassword() {
 
+  // Prompt for password character length
+
   // Ask the user to select between 8-128 characters
-  var charLength = prompt("Choose a length of at least 8 characters and no more than 128 characters. Type the number");
+  var charLength = prompt("Choose a length of at least 8 characters and no more than 128 characters. Type your number");
 
-  if (charLength >= 8 && charLength <= 128) {
-    return password
-    console.log('character length is ' + charLength)
+    // Validate the user input
+    if(charLength >= 8 && charLength <= 128) {
+      console.log('length is ' + charLength + ' characters');
 
-    let password
-    var upperChar = confirm('Do you want uppercase characters? Ok (yes) Cancel (no)');
-  
-  
-  
+        // Confirms for other password criteria
 
-    
+          // Confirm upper case letters         
+          var charUpper = confirm('Do you want uppercase characters? Ok (yes) Cancel (no)');
+            
+          // Ask if the user would like lowercase characters
+          var charLower = confirm('Do you want lowercase characters? Ok (yes) Cancel (no)');
 
-  // The input was outside of our range
+          // Ask if the user would like numbers
+          var charNumbers = confirm('Do you want to include numbers? Ok (yes) Cancel (no)');
+
+          // Ask if the user wants special characters
+          var charSpecial = confirm('Do you want to include special characters? Ok (yes) Cancel (no)'); 
+              
+            if(charUpper === true || charLower === true  || charNumbers === true  || charSpecial === true) {
+
+              // Randomly selects a choice from the uppercase array
+              if (charUpper == true) {
+
+                for (let i = 0; i < charLength; i++) { 
+                  var upper = upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)];
+                  console.log(upper);         
+                }    
+              }
+
+              // Randomly selects a choice from the lowercase array
+              if (charLower == true) {
+
+                for (let i = 0; i < charLength; i++) { 
+                var lower = lowerCaseCharacters[Math.floor(Math.random() * lowerCaseCharacters.length)]; 
+                console.log(lower);
+                }
+              }
+
+             // Randomly selects a choice from the numbers array
+             if (charNumbers == true) {
+              
+              for (let i = 0; i < charLength; i++) { 
+              var num = numericCharacters[Math.floor(Math.random() * numericCharacters.length)]; 
+              console.log(num);
+              }
+             }
+
+              // Randomly selects a choice from the special characters array
+              if (charSpecial == true) {
+
+                for (let i = 0; i < charLength; i++) { 
+                var spec = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]; 
+                console.log(spec);
+                }
+              }
+            
+              
+            // Error message if selected cancel for all of the confirms
+              } else {
+                alert('Please select one of the password criteria');
+              }
+            
+
+              
+
+   // Error message the input was outside of our range
   } else {
-    alert("Number is out of the range. Please choose a number between 8 and 128")
-    prompt("Choose a length of at least 8 characters and no more than 128 characters. Type the number");
-  }
+  alert("Number is out of the range. Please choose a number between 8 and 128");
+  prompt("Choose a length of at least 8 characters and no more than 128 characters. Type your number");
+  } 
+
+
 }
+
 
 
     
