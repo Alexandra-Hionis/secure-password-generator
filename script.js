@@ -26,8 +26,12 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+ 
 function generatePassword() {
+
+  // Add one of each type of character to the password
+ var password = [];
+ var characterPool = [];
 
   // Prompt for password character length
 
@@ -57,39 +61,22 @@ function generatePassword() {
 
               // Randomly selects a choice from the uppercase array
               if (charUpper == true) {
-                
-
-                for (let i = 0; i < charLength; i++) { 
-                  var upper = upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)];
-                  console.log(upper);         
-                }    
+                characterPool = characterPool.concat(upperCaseCharacters)  
               }
 
               // Randomly selects a choice from the lowercase array
               if (charLower == true) {
-
-                for (let i = 0; i < charLength; i++) { 
-                var lower = lowerCaseCharacters[Math.floor(Math.random() * lowerCaseCharacters.length)]; 
-                console.log(lower);
-                }
+                characterPool = characterPool.concat(lowerCaseCharacters)
               }
 
              // Randomly selects a choice from the numbers array
              if (charNumbers == true) {
-              
-              for (let i = 0; i < charLength; i++) { 
-              var num = numericCharacters[Math.floor(Math.random() * numericCharacters.length)]; 
-              console.log(num);
-              }
+              characterPool = characterPool.concat(numericCharacters)
              }
 
               // Randomly selects a choice from the special characters array
               if (charSpecial == true) {
-
-                for (let i = 0; i < charLength; i++) { 
-                var spec = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]; 
-                console.log(spec);
-                }
+                characterPool = characterPool.concat(specialCharacters)
               }
               
             // Error message if selected cancel for all of the confirms
@@ -104,40 +91,14 @@ function generatePassword() {
   prompt("Choose a length of at least 8 characters and no more than 128 characters. Type your number");
   } 
 
-  // Add one of each type of character to the password
-var password = "";
-var characterPool = [];
-
-if (charUpper) {
-  password += //get a random capital letter.
-  characterPool.concat(upperCaseCharacters);
- }
-
- if (charLower) {
-  password += //get a random capital letter.
-  characterPool.concat(lowerCaseCharacters);
- }
-
- if (charNumbers) {
-  password += //get a random capital letter.
-  characterPool.concat(numericCharacters);
- }
-
- if (charSpecial) {
-  password += //get a random capital letter.
-  characterPool.concat(specialCharacters);
- }
-
- while (password < charLength) {
-  password++;
-  console.log('Password is: ' + password);
-
-
-
+ 
+for (i=0; i < charLength; i++) {
+  password.push(characterPool[Math.floor(Math.random() * characterPool.length)])
 }
+  console.log(password);
 
 
-return password;
+return password.join("");
 }  
 
  
