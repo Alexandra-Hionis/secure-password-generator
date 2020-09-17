@@ -59,7 +59,7 @@ function generatePassword() {
               if (charUpper == true) {
                 
 
-                for (let i = 0; i < charLength; i++) {  // OR CHARLENGTH!!!!*****
+                for (let i = 0; i < charLength; i++) { 
                   var upper = upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)];
                   console.log(upper);         
                 }    
@@ -128,11 +128,12 @@ if (charUpper) {
   characterPool.concat(specialCharacters);
  }
 
+ while (password < charLength) {
+  password++;
+  console.log('Password is: ' + password);
 
 
-while (characterPool < charLength) {
-  characterPool++;
-  console.log('Password is: ');
+
 }
 
 
