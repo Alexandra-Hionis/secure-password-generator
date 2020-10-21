@@ -1,3 +1,4 @@
+https://alexandra-hionis.github.io/secure-password-generator/
 # Secure Password Generator
 This secure password generator will provide a better level of security. It will output a truly unique and random password using HTML and CSS powered by JavaScript code. It has a clean and simple interface and is responsive to any screen size.
 
